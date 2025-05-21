@@ -11,7 +11,6 @@ export default function Land() {
 import DropdownMenu from "@ui/dropDownMenu";
 import { motion } from "framer-motion";
 import Hero from "@ui/hero";
-import Link from "next/link";
 function Header() {
   return (
     <>
