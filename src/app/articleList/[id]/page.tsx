@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation"; // <- use this for dynamic route like /articles/[id]
 import { supabase } from "../../../lib/supabaseClient";
+import Image from "next/image";
 import Header from "@ui/header";
 import Footer from "@ui/footer";
 import Link from "next/link";
@@ -61,7 +62,7 @@ export default function ArticleRead() {
           />
         </div>
         <p className="text-sm text-gray-500">{currentArticle.date}</p>
-        <img
+        <Image
           src={currentArticle.imgUrl}
           alt=""
           className="my-4 w-full rounded"
