@@ -1,16 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation"; // <- use this for dynamic route like /articles/[id]
+import { useParams } from "next/navigation";
 import { supabase } from "../../../lib/supabaseClient";
 import Image from "next/image";
-import Header from "@ui/header";
-import Footer from "@ui/footer";
+import Header from "@/components/ui/header";
+import Footer from "@/components/ui/footer";
 import Link from "next/link";
-import { ArticleCard } from "@ui/articleCard";
+import { ArticleCard } from "@/components/ui/articleCard";
 import Head from "next/head";
-import Share from "@ui/share";
-import SocialCard from "@ui/socialCard";
+import Share from "@/components/ui/share";
+import SocialCard from "@/components/ui/socialCard";
 
 export default function ArticleRead() {
   const [articles, setArticles] = useState<any[]>([]);
@@ -56,7 +56,7 @@ export default function ArticleRead() {
         <div className="flex">
           <h1 className="text-2xl font-bold">{currentArticle.Heading}</h1>
           <Share
-            className="ml-auto w-auto h-auto flex"
+            className="ml-auto flex"
             id={id}
             imageUrl={currentArticle.imgUrl}
           />
@@ -65,23 +65,25 @@ export default function ArticleRead() {
         <Image
           src={currentArticle.imgUrl}
           alt=""
+          width={800}
+          height={400}
           className="my-4 w-full rounded"
         />
         <p>{currentArticle.subHeading}</p>
         <p>{currentArticle.content}</p>
 
-        <div className="flex justify-center items-center">
-          <p className="mt-12">End</p>
+        <div className="flex justify-center items-center mt-12">
+          <p>End</p>
         </div>
 
         <hr className="my-4 border-t border-gray-300" />
 
-        <div className="flex-wrap gap-2 mt-[80px] mb-[80px] flex justify-center items-center w-full h-auto">
+        <div className="flex-wrap gap-2 mt-20 mb-20 flex justify-center items-center">
           <fieldset>
             <legend className="text-3xl font-bold text-gray-700 -ml-6 mb-6">
               Share this article <span>❤️</span>
             </legend>
-            <div className="flex-wrap gap-2 scale-[1.2] flex justify-center items-center w-full h-auto">
+            <div className="flex-wrap gap-2 scale-110 flex justify-center items-center">
               <SocialCard
                 linkUrl={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
                   currentUrl
@@ -100,7 +102,7 @@ export default function ArticleRead() {
           </fieldset>
         </div>
 
-        <div className="flex flex-wrap gap-4 justify-center mt-[100px]">
+        <div className="flex flex-wrap gap-4 justify-center mt-24">
           {articles.map((a) => (
             <Link href={`/articles/${a.id}`} key={a.id}>
               <ArticleCard
