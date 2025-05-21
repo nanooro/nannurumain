@@ -27,6 +27,3 @@
   "exclude": ["**"],
   "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"]
 }
-git add .
-git commit -m "add path aliases for @ and @ui"
-git push
