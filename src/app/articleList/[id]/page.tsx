@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { supabase } from "../../../lib/supabaseClient";
 import Image from "next/image";
-import Header from "@/ui/header";
-import Footer from "@/ui/footer";
+import Header from "@ui/header";
+import Footer from "@ui/footer";
 import Link from "next/link";
-import { ArticleCard } from "@/ui/articleCard";
+import { ArticleCard } from "@ui/articleCard";
 import Head from "next/head";
-import Share from "@/ui/share";
-import SocialCard from "@/ui/socialCard";
+import Share from "@ui/share";
+import SocialCard from "@ui/socialCard";
 
 export default function ArticleRead() {
   const [articles, setArticles] = useState<any[]>([]);
