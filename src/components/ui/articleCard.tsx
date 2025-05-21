@@ -7,7 +7,7 @@ type Props = {
   subHeading: string;
   date: string;
   rating: number;
-};
+};he
 
 export function ArticleCard({
   imgUrl,
