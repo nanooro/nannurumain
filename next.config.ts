@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   images: {
@@ -8,6 +9,10 @@ const nextConfig: NextConfig = {
         hostname: "**",
       },
     ],
+  },
+  webpack: (config) => {
+    config.resolve.alias["@ui"] = path.resolve(__dirname, "src/components/ui");
+    return config;
   },
 };
 
